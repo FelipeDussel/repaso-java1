@@ -1,16 +1,19 @@
 package org;
 
+import Entidades.Carrito;
+import Entidades.Producto;
 import Entidades.Propina;
 
 import java.util.Scanner;
 
 public class Main {
     static void main() {
-        Scanner teclado = new Scanner(System.in);
-        System.out.println("Hola! Para calcular la propina, ingrese el monto total de la cuenta: ");
-        double precioTotal =  teclado.nextDouble();
-        System.out.println("Bien, ahora ingrese el porcentaje de propina: ");
-        int porcentaje = teclado.nextInt();
-        System.out.println("Cuenta: $" + precioTotal + " | Propina (" + porcentaje + "%): $" + Propina.calcular(precioTotal, porcentaje));
+        Carrito carrito = new Carrito();
+        carrito.agregarProducto(new Producto("Manzana", 250));
+        carrito.agregarProducto(new Producto("Leche", 1500));
+        carrito.agregarProducto(new Producto("Televisor", 150000));
+        carrito.agregarProducto(new Producto("Buzo", 25000));
+        carrito.agregarProducto(new Producto("Coca Cola", 3000));
+        carrito.mostrarResumen();
         }
     }
